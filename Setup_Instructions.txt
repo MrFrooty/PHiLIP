@@ -1,0 +1,22 @@
+Run Commands:
+
+conda create --name pixart python=3.8.18
+
+source activate pixart
+
+conda install -c pytorch pytorch torchvision torchaudio
+
+pip install -U diffusers transformers accelerate safetensors sentencepiece beautifulsoup4 matplotlib ftfy pillow requests scipy
+
+
+
+
+
+cd FreeStyle
+
+cd diffusers
+pip install -e .
+pip install torchsde
+cd ../diffusers_test
+pip install transformers
+pip install accelerate

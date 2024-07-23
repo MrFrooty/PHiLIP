@@ -77,7 +77,7 @@ def process_base_images(base_images: Union[List[np.ndarray], np.ndarray], device
         torch.Tensor: Processed base images as a tensor.
     """
     if isinstance(base_images, list):
-        base_image_tensors = [preprocess(Image.fromarray(img) if isinstance(img, np.ndarray) else img).unsqueeze(0) for img in base_images]
+        base_image_tensors = [preprocess(Image.fromarray(img)).unsqueeze(0) for img in base_images]
         return torch.mean(torch.stack(base_image_tensors), dim=0).to(device)
     else:
-        return preprocess(Image.fromarray(base_images) if isinstance(base_images, np.ndarray) else base_images).unsqueeze(0).to(device)
+        return preprocess(Image.fromarray(base_images)).unsqueeze(0).to(device)

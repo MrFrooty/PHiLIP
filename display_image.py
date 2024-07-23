@@ -38,22 +38,35 @@ def display_and_select_image(images: List[np.ndarray], resolution: int, iteratio
 
     return get_user_selection(images, num_images, resolution)
 
-def save_images(images: List[np.ndarray], resolution: int) -> None:
+def save_images(images: List[np.ndarray], resolution: int, final: bool = False) -> None:
     """
     Save all generated images.
     
     Args:
         images: List of images to save.
         resolution: Resolution of the images.
+        final: Whether this is the final enhanced image.
     """
-    logger.info(f"Saving {len(images)} images at {resolution}x{resolution} resolution")
+    num_images = len(images)
+    logger.info(f"Saving {num_images} image{'s' if num_images > 1 else ''} at {resolution}x{resolution} resolution")
+    
     for i, img in enumerate(images):
-        file_path = os.path.join(IMAGE_FOLDER, f"{resolution}-{i+1}.png")
+        if final:
+            file_name = f"final-enhanced-{resolution}.png"
+        else:
+            file_name = f"{resolution}-{i+1}.png"
+        file_path = os.path.join(IMAGE_FOLDER, file_name)
         try:
             plt.imsave(file_path, img)
+            logger.info(f"Image {file_name} saved successfully")
         except Exception as e:
-            logger.error(f"Failed to save image {i+1}: {str(e)}")
-    logger.info(f"All images saved successfully in {IMAGE_FOLDER}")
+            logger.error(f"Failed to save image {file_name}: {str(e)}")
+    
+    if final:
+        logger.info(f"Final enhanced image saved as {file_name}")
+    else:
+        logger.info(f"All {num_images} images saved in {IMAGE_FOLDER}")
+
 
 def get_user_selection(images: List[np.ndarray], num_images: int, resolution: int) -> Optional[List[np.ndarray]]:
     """

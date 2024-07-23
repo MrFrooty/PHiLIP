@@ -1,9 +1,0 @@
-Run Commands: 
-
-conda create --name pixart python=3.8
-
-source activate pixart
-
-conda install -c pytorch pytorch torchvision torchaudio 
-
-pip install -U diffusers transformers accelerate safetensors sentencepiece beautifulsoup4 matplotlib ftfy pillow requests scipy
