@@ -17,17 +17,27 @@ os.makedirs(IMAGE_FOLDER, exist_ok=True)
 # Model names
 MODEL_MID_RES: Final[str] = "PixArt-alpha/PixArt-XL-2-512x512"
 MODEL_HIGH_RES: Final[str] = "PixArt-alpha/PixArt-XL-2-1024-MS"
-UPSCALER_MODEL: Final[str] = "stabilityai/stable-diffusion-x4-upscaler"
+UPSCALER_MODEL: Final[str] = "stabilityai/sd-x2-latent-upscaler"
+SD_BASE_MODEL: Final[str] = "CompVis/stable-diffusion-v1-4"
+
+# ControlNet settings
+CONTROLNET_MODEL: Final[str] = "lllyasviel/sd-controlnet-canny"
+CONTROLNET_CONDITIONING_SCALE: Final[float] = 0.5
+CONTROL_GUIDANCE_START: Final[float] = 0.0
+CONTROL_GUIDANCE_END: Final[float] = 1.0
 
 # User input options
 VALID_USER_COMMANDS: Final[set] = {
     "regenerate", "reselect", "stop", "continue", 
-    "prompt", "temperature", "restart"
+    "prompt", "temperature", "restart", "change_num_images"
 }
+
+# Enhancement options
+ENHANCEMENT_OPTIONS: Final[List[str]] = ["Freestyle", "Upscaler", "ControlNet", "Pixart", "None"]
 
 # Initial prompt
 INITIAL_PROMPT: Final[str] = """
-A serene forest at dawn with towering, ancient trees draped in moss. A crystal-clear river winds through the landscape, reflecting the soft morning light. At the river's edge, vibrant flowers bloom amid bioluminescent mushrooms. A delicate stone bridge arches over the river, leading to a hidden grove with a mystical waterfall cascading into a shimmering pool.
+Create a serene mountain landscape at sunrise with pink and orange skies. Snow-capped peaks reflect the morning light, while a misty, green valley below features a winding crystal-clear river and tall pine trees. Wildflowers add vibrant colors to the tranquil scene.
 """
 
 # Logging configuration
@@ -41,4 +51,4 @@ BACKUP_COUNT: Final[int] = 3
 TEMPERATURE_PROMPT: Final[str] = "Enter new temperature (suggested range from 0.5 to 1.5): "
 INFERENCE_STEPS_PROMPT: Final[str] = "Enter new number of inference steps (4-50 recommended): "
 NUM_IMAGES_PROMPT: Final[str] = "Enter new number of images to generate (1-9 recommended): "
-ENHANCEMENT_PROMPT: Final[str] = "Select enhancement option (freestyle/pixart/upscale/none): "
+ENHANCEMENT_PROMPT: Final[str] = "Select enhancement option (Freestyle/Upscaler/ControlNet/Pixart/None): "

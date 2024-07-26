@@ -15,7 +15,7 @@ def handle_user_input() -> str:
     """
     while True:
         user_input = input(
-            "Options: 'regenerate', 'reselect', 'stop', 'continue', 'prompt', 'temperature', or 'restart': "
+            "Options: 'regenerate', 'reselect', 'stop', 'continue', 'prompt', 'temperature', 'restart', or 'change_num_images': "
         ).strip().lower()
         if user_input in VALID_USER_COMMANDS:
             return user_input
@@ -40,8 +40,10 @@ def get_user_input(prompt: str, input_type: type, min_value: Union[int, float] =
         user_input = input(prompt).strip()
         try:
             if input_type == str and valid_options:
-                if user_input.lower() in valid_options:
-                    return user_input.lower()
+                user_input_lower = user_input.lower()
+                valid_options_lower = [option.lower() for option in valid_options]
+                if user_input_lower in valid_options_lower:
+                    return valid_options[valid_options_lower.index(user_input_lower)]
                 else:
                     raise ValueError(f"Input must be one of: {', '.join(valid_options)}")
             
