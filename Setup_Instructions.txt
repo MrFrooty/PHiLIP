@@ -7,3 +7,9 @@ source activate pixart
 conda install -c pytorch pytorch torchvision torchaudio 
 
 pip install -U diffusers transformers accelerate safetensors sentencepiece beautifulsoup4 matplotlib ftfy pillow requests scipy opencv-python flask flask_cors
+
+Run Flask Server:
+
+export FLASK_APP=main.py
+
+flask run --host=0.0.0.0 --port=5000
