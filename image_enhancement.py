@@ -65,6 +65,56 @@ def select_style_prompt(style_prompts: List[Dict[str, str]]) -> Dict[str, str]:
         except ValueError:
             print("Please enter a valid number.")
 
+def combine_prompts(user_prompt: str, style: Dict[str, str], max_tokens: int = 77) -> Tuple[str, str]:
+    """
+    Combine user prompt with style prompt, ensuring it doesn't exceed the token limit.
+    Truncates the negative prompt first, then the positive prompt if necessary.
+    
+    Args:
+        user_prompt: The user's input prompt.
+        style: The selected style dictionary.
+        max_tokens: Maximum number of tokens allowed (default is 77 for SDXL).
+    
+    Returns:
+        Tuple[str, str]: Combined positive prompt and negative prompt.
+    """
+    def count_tokens(text: str) -> int:
+        # This is a simple approximation. For more accurate counting, consider using a tokenizer.
+        return len(re.findall(r'\w+', text))
+
+    user_tokens = count_tokens(user_prompt)
+    style_tokens = count_tokens(style['prompt'])
+    neg_tokens = count_tokens(style.get('negative_prompt', ''))
+
+    # Combine user prompt and style prompt
+    full_prompt = f"{user_prompt}, {style['prompt']}"
+    full_prompt_tokens = user_tokens + style_tokens
+
+    # Calculate remaining tokens for negative prompt
+    remaining_tokens = max_tokens - full_prompt_tokens
+
+    # Truncate negative prompt if necessary
+    if neg_tokens > remaining_tokens:
+        words = style['negative_prompt'].split()
+        neg_prompt = ' '.join(words[:remaining_tokens])
+        logger.warning(f"Negative prompt truncated to fit within token limit. Original: {style['negative_prompt']}, Truncated: {neg_prompt}")
+    else:
+        neg_prompt = style.get('negative_prompt', '')
+
+    # If negative prompt is completely removed and we still exceed the token limit, truncate the positive prompt
+    if not neg_prompt and full_prompt_tokens > max_tokens:
+        words = full_prompt.split()
+        full_prompt = ' '.join(words[:max_tokens])
+        logger.warning(f"Positive prompt truncated to fit within token limit. Truncated: {full_prompt}")
+
+    # Log warnings
+    if not neg_prompt:
+        logger.warning("Negative prompt completely removed due to token limit.")
+    if full_prompt_tokens > max_tokens:
+        logger.warning("Positive prompt truncated due to token limit.")
+
+    return full_prompt, neg_prompt
+
 def apply_freestyle(image: np.ndarray, prompt: str) -> np.ndarray:
     """
     Apply Freestyle to the given image using the SDXL model from Hugging Face.
@@ -100,48 +150,6 @@ def apply_freestyle(image: np.ndarray, prompt: str) -> np.ndarray:
         logger.error(f"Error during Freestyle processing: {str(e)}")
         logger.warning("Falling back to original image due to Freestyle processing error.")
         return image
-
-def combine_prompts(user_prompt: str, style: Dict[str, str], max_tokens: int = 77) -> Tuple[str, str]:
-    """
-    Combine user prompt with style prompt, ensuring it doesn't exceed the token limit.
-    Truncates the negative prompt if necessary to fit within the token limit.
-    
-    Args:
-        user_prompt: The user's input prompt.
-        style: The selected style dictionary.
-        max_tokens: Maximum number of tokens allowed (default is 77 for SDXL).
-    
-    Returns:
-        Tuple[str, str]: Combined positive prompt and negative prompt.
-    """
-    def count_tokens(text: str) -> int:
-        # This is a simple approximation. For more accurate counting, consider using a tokenizer.
-        return len(re.findall(r'\w+', text))
-
-    user_tokens = count_tokens(user_prompt)
-    style_tokens = count_tokens(style['prompt'])
-    neg_tokens = count_tokens(style.get('negative_prompt', ''))
-
-    # Combine user prompt and style prompt
-    full_prompt = f"{user_prompt}, {style['prompt']}"
-    full_prompt_tokens = user_tokens + style_tokens
-
-    # Calculate remaining tokens for negative prompt
-    remaining_tokens = max_tokens - full_prompt_tokens
-
-    # Truncate negative prompt if necessary
-    if neg_tokens > remaining_tokens:
-        words = style['negative_prompt'].split()
-        neg_prompt = ' '.join(words[:remaining_tokens])
-        logger.warning(f"Negative prompt truncated to fit within token limit. Original: {style['negative_prompt']}, Truncated: {neg_prompt}")
-    else:
-        neg_prompt = style.get('negative_prompt', '')
-
-    # If negative prompt is completely removed, log a warning
-    if not neg_prompt:
-        logger.warning("Negative prompt completely removed due to token limit.")
-
-    return full_prompt, neg_prompt
 
 def generate_image_with_pipeline(pipe, prompt: str, image: Image.Image, negative_prompt: str) -> Image.Image:
     """Generate image using the provided pipeline and parameters."""
