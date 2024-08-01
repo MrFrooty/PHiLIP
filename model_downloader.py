@@ -9,6 +9,12 @@ logger = logging.getLogger(__name__)
 ModelInfo = Tuple[type, str]
 
 def get_model_list() -> List[ModelInfo]:
+    """
+    Get a list of models to be downloaded.
+
+    Returns:
+        List[ModelInfo]: A list of tuples containing the model class and model name.
+    """
     return [
         (PixArtAlphaPipeline, MODEL_MID_RES),
         (PixArtAlphaPipeline, MODEL_HIGH_RES),
@@ -18,6 +24,13 @@ def get_model_list() -> List[ModelInfo]:
     ]
 
 def download_model(model_class: type, model_name: str) -> None:
+    """
+    Download a specific model.
+
+    Args:
+        model_class (type): The class of the model to be downloaded.
+        model_name (str): The name of the model to be downloaded.
+    """
     logger.info(f"Checking/downloading {model_name}")
     try:
         if model_class == DiffusionPipeline and model_name == FREESTYLE_MODEL:
@@ -29,11 +42,20 @@ def download_model(model_class: type, model_name: str) -> None:
         logger.error(f"Error downloading {model_name}: {str(e)}")
 
 def download_models() -> None:
+    """
+    Download all required models.
+    """
     models = get_model_list()
     for model_class, model_name in models:
         download_model(model_class, model_name)
 
 def get_model_status() -> Dict[str, str]:
+    """
+    Get the download status of all required models.
+
+    Returns:
+        Dict[str, str]: A dictionary containing the status of each model.
+    """
     status = {}
     models = get_model_list()
     for _, model_name in models:

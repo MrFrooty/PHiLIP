@@ -42,7 +42,7 @@ def image_generation_loop(initial_prompt: str) -> Optional[List[np.ndarray]]:
 
     prompt = initial_prompt
     temperature = DEFAULT_TEMPERATURE
-    resolution = RESOLUTIONS[0]  # Start with 512x512
+    resolution = RESOLUTIONS[0] 
     num_images = NUM_IMAGES_LIST[0]
     inference_steps = INFERENCE_STEPS_LIST[0]
     enhanced_image = None
@@ -97,7 +97,16 @@ def image_generation_loop(initial_prompt: str) -> Optional[List[np.ndarray]]:
             return [enhanced_image]
 
 def log_current_settings(prompt: str, temperature: float, resolution: int, inference_steps: int, num_images: int) -> None:
-    """Log current generation settings."""
+    """
+    Log current generation settings.
+
+    Args:
+        prompt: Current prompt for image generation.
+        temperature: Current temperature setting.
+        resolution: Current resolution setting.
+        inference_steps: Current number of inference steps.
+        num_images: Current number of images to generate.
+    """
     logger.info(dedent(f"""
     Current settings:
     Prompt: {prompt}
@@ -108,7 +117,19 @@ def log_current_settings(prompt: str, temperature: float, resolution: int, infer
     """))
 
 def regenerate_enhanced_image(base_image: np.ndarray, prompt: str, enhancement_option: str, temperature: float, final_resolution: int) -> np.ndarray:
-    """Regenerate the enhanced image."""
+    """
+    Regenerate the enhanced image.
+
+    Args:
+        base_image: The base image to enhance.
+        prompt: The prompt for image enhancement.
+        enhancement_option: The selected enhancement option.
+        temperature: The temperature setting for enhancement.
+        final_resolution: The final resolution of the enhanced image.
+
+    Returns:
+        np.ndarray: The regenerated enhanced image.
+    """
     logger.info("Regenerating enhanced image...")
     enhanced_image = apply_enhancement(base_image, prompt, enhancement_option, temperature)
     save_images([enhanced_image], final_resolution, final=True)
@@ -116,7 +137,13 @@ def regenerate_enhanced_image(base_image: np.ndarray, prompt: str, enhancement_o
     return enhanced_image
 
 def reset_generation_process() -> Tuple[Optional[List[np.ndarray]], Optional[np.ndarray], Optional[str]]:
-    """Reset the generation process."""
+    """
+    Reset the generation process.
+
+    Returns:
+        Tuple[Optional[List[np.ndarray]], Optional[np.ndarray], Optional[str]]: 
+        A tuple containing reset values for base_images, enhanced_image, and enhancement_option.
+    """
     logger.info("Restarting the process...")
     return None, None, None
 

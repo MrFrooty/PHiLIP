@@ -13,6 +13,17 @@ def encode_image(image: np.ndarray) -> str:
     Returns:
         str: The base64 encoded string of the image.
     """
+    if image.dtype != np.uint8:
+        if image.max() <= 1.0:
+            image = (image * 255).astype(np.uint8)
+        else:
+            image = image.astype(np.uint8)
+    
+    if len(image.shape) == 2:
+        image = np.stack((image,) * 3, axis=-1)
+    elif image.shape[2] == 4:
+        image = image[:, :, :3] 
+    
     img = Image.fromarray(image)
     buffered = io.BytesIO()
     img.save(buffered, format="PNG")
@@ -29,9 +40,7 @@ def decode_image(encoded_string: str) -> np.ndarray:
     Returns:
         np.ndarray: The decoded image as a numpy array.
     """
-    # Check if the string starts with the data URI prefix
     if encoded_string.startswith('data:image'):
-        # Split the string and keep only the base64 part
         encoded_string = encoded_string.split(',', 1)[1]
     
     try:
