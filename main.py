@@ -7,6 +7,7 @@ from PIL import Image
 import os
 import json
 from datetime import datetime
+import threading
 
 from image_generation_loop import generate_images
 from image_enhancement import apply_enhancement
@@ -19,12 +20,6 @@ from model_downloader import download_models, get_model_status
 from utils import encode_image, decode_image, handle_error
 
 app = Flask(__name__)
-@app.before_request
-def log_request_info():
-    """Log information about incoming requests."""
-    logger.info(f"Received request: {request.method} {request.url}")
-    logger.info(f"Headers: {request.headers}")
-    logger.info(f"Body: {request.get_data()}")
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
 def setup_logging():
@@ -45,6 +40,24 @@ def setup_logging():
     return logger
 
 logger = setup_logging()
+
+@app.before_request
+def log_request_info():
+    """Log information about incoming requests."""
+    logger.info(f"Received request: {request.method} {request.url}")
+    logger.info(f"Headers: {request.headers}")
+    logger.info(f"Body: {request.get_data()}")
+
+def download_models_async():
+    """
+    Download all models asynchronously.
+    """
+    logger.info("Starting asynchronous model download...")
+    download_models()
+    logger.info("Asynchronous model download completed.")
+
+download_thread = threading.Thread(target=download_models_async)
+download_thread.start()
 
 @app.route('/generate', methods=['POST'])
 def generate_images_endpoint():
@@ -414,6 +427,32 @@ def test_endpoint():
         flask.Response: JSON response indicating that the test endpoint is working.
     """
     return jsonify({"message": "Test endpoint is working"}), 200
+
+@app.route('/model-status', methods=['GET'])
+def get_model_status_endpoint():
+    """
+    Endpoint for checking the status of required models.
+
+    Returns:
+        flask.Response: JSON response containing the status of each model.
+    """
+    try:
+        status = get_model_status()
+        return jsonify(status)
+    except Exception as e:
+        logger.error(f"Error fetching model status: {str(e)}")
+        return jsonify(handle_error(e)), 500
+
+@app.route('/download-progress', methods=['GET'])
+def get_download_progress():
+    """
+    Endpoint for checking the progress of model downloads.
+
+    Returns:
+        flask.Response: JSON response indicating whether the download is complete.
+    """
+    is_complete = not download_thread.is_alive()
+    return jsonify({'downloadComplete': is_complete})
 
 if __name__ == "__main__":
     logger.info("Starting image generation server...")

@@ -6,7 +6,7 @@ source activate pixart
 
 conda install -c pytorch pytorch torchvision torchaudio 
 
-pip install -U diffusers transformers accelerate safetensors sentencepiece beautifulsoup4 matplotlib ftfy pillow requests scipy opencv-python flask flask_cors
+pip install -U diffusers transformers accelerate safetensors sentencepiece beautifulsoup4 matplotlib ftfy pillow requests scipy opencv-python flask flask_cors threading
 
 Run Flask Server:
 
