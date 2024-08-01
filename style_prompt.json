@@ -1,357 +1,357 @@
 [
-    {
-      "name": "Anime",
-      "prompt": "anime style, vibrant colors, exaggerated expressions, large eyes, dynamic poses, clean lines, character-focused, manga influence",
-      "negative_prompt": "realistic proportions, muted colors, dull expressions, complex backgrounds"
-    },
-    {
-      "name": "Cartoon",
-      "prompt": "cartoon style, bold outlines, bright colors, simplified shapes, exaggerated features, playful and humorous, animation influence",
-      "negative_prompt": "realistic details, muted colors, serious themes, complex designs"
-    },
-    {
-      "name": "Oil Painting",
-      "prompt": "oil painting style, vibrant colors, thick brushstrokes, textured canvas, masterpiece quality, artistic composition, rich details, Impressionist influence",
-      "negative_prompt": "blurry, low quality, distorted, flat colors, digital art, photograph, smooth texture"
-    },
-    {
-      "name": "Watercolor",
-      "prompt": "watercolor painting, soft washes of color, translucent layers, fluid transitions, delicate brushstrokes, organic textures, subtle color bleeding, loose and expressive",
-      "negative_prompt": "sharp edges, opaque colors, digital appearance, heavy lines, photorealistic, high contrast"
-    },
-    {
-      "name": "Pop Art",
-      "prompt": "pop art style, bold primary colors, thick outlines, Ben-Day dots, flat color areas, commercial printing aesthetic, iconic imagery, high contrast, Andy Warhol influence",
-      "negative_prompt": "muted colors, realistic shading, organic shapes, subtle tones, classical art style"
-    },
-    {
-      "name": "Cubism",
-      "prompt": "cubist style, geometric shapes, multiple perspectives, fragmented forms, abstract interpretation, angular lines, muted color palette, Picasso-inspired",
-      "negative_prompt": "realistic proportions, single viewpoint, smooth curves, photorealistic details"
-    },
-    {
-      "name": "Art Nouveau",
-      "prompt": "Art Nouveau style, organic flowing lines, nature-inspired motifs, decorative elements, muted colors, elegant curves, intricate patterns, Mucha-inspired",
-      "negative_prompt": "geometric shapes, harsh lines, bright neon colors, minimalist design, photorealistic"
-    },
-    {
-      "name": "Surrealism",
-      "prompt": "surrealist art, dreamlike imagery, unexpected juxtapositions, symbolic elements, distorted reality, Dali-inspired, subconscious exploration",
-      "negative_prompt": "realistic scenes, logical compositions, mundane subjects, photorealistic style"
-    },
-    {
-      "name": "Japanese Ukiyo-e",
-      "prompt": "Ukiyo-e style, woodblock print aesthetic, flat color areas, strong outlines, traditional Japanese motifs, subtle gradients, Hokusai-inspired",
-      "negative_prompt": "3D shading, photorealistic details, Western art style, bright neon colors"
-    },
-    {
-      "name": "Abstract Expressionism",
-      "prompt": "abstract expressionist style, gestural brushstrokes, spontaneous marks, emotive color use, non-representational forms, large-scale composition, Jackson Pollock influence",
-      "negative_prompt": "realistic depictions, precise lines, photorealistic details, muted colors"
-    },
-    {
-      "name": "Art Deco",
-      "prompt": "Art Deco style, geometric patterns, symmetrical compositions, luxurious materials, streamlined forms, bold colors, glamorous aesthetic, 1920s influence",
-      "negative_prompt": "organic shapes, rustic elements, pastel colors, minimalist design"
-    },
-    {
-      "name": "Gothic",
-      "prompt": "Gothic art style, ornate details, pointed arches, dark and moody atmosphere, religious motifs, stained glass aesthetic, medieval influence",
-      "negative_prompt": "bright cheerful colors, modern elements, minimalist design, photorealistic style"
-    },
-    {
-      "name": "Minimalism",
-      "prompt": "minimalist art style, simple geometric forms, limited color palette, clean lines, negative space, uncluttered composition, Mondrian-inspired",
-      "negative_prompt": "complex patterns, ornate details, busy compositions, realistic depictions"
-    },
-    {
-      "name": "Pointillism",
-      "prompt": "pointillism technique, small distinct dots of color, optical color mixing, vibrant palette, Seurat-inspired, precise dot application, Neo-Impressionist style",
-      "negative_prompt": "smooth color blending, large brushstrokes, monochromatic scheme, photorealistic details"
-    },
-    {
-      "name": "Baroque",
-      "prompt": "Baroque art style, dramatic lighting, rich colors, ornate details, dynamic compositions, emotional intensity, Caravaggio-inspired chiaroscuro",
-      "negative_prompt": "flat lighting, muted colors, minimalist design, static compositions, modern elements"
-    },
-    {
-      "name": "Fauvism",
-      "prompt": "Fauvist style, wild brushstrokes, unrealistic vivid colors, simplified forms, emotional expression through color, Matisse-inspired",
-      "negative_prompt": "realistic colors, detailed rendering, photorealistic style, muted tones"
-    },
-    {
-      "name": "Digital Pixel Art",
-      "prompt": "pixel art style, low-resolution aesthetic, limited color palette, blocky shapes, 8-bit game inspired, crisp edges, retro gaming feel",
-      "negative_prompt": "smooth gradients, high-resolution details, photorealistic rendering, complex shading"
-    },
-    {
-      "name": "Renaissance",
-      "prompt": "Renaissance art style, balanced compositions, realistic proportions, sfumato technique, classical themes, rich colors, Leonardo da Vinci influence",
-      "negative_prompt": "abstract forms, modern elements, flat colors, cartoonish style"
-    },
-    {
-      "name": "Impressionism",
-      "prompt": "Impressionist style, visible brushstrokes, emphasis on light and movement, vibrant color palette, outdoor scenes, Monet-inspired",
-      "negative_prompt": "sharp details, muted colors, indoor settings, photorealistic rendering"
-    },
-    {
-      "name": "Art Brut",
-      "prompt": "Art Brut style, raw and instinctual expression, unconventional materials, bold and crude forms, outsider art aesthetic, Jean Dubuffet influence",
-      "negative_prompt": "refined techniques, traditional art materials, subtle colors, academic style"
-    },
-    {
-      "name": "Constructivism",
-      "prompt": "Constructivist style, geometric abstraction, bold colors, industrial materials, dynamic composition, propaganda poster aesthetic, Russian avant-garde influence",
-      "negative_prompt": "organic shapes, pastel colors, realistic depictions, ornate decorations"
-    },
-    {
-      "name": "Rococo",
-      "prompt": "Rococo style, ornate and elaborate designs, pastel color palette, asymmetrical compositions, playful and light-hearted themes, Fragonard-inspired",
-      "negative_prompt": "minimalist design, dark colors, geometric shapes, heavy or serious themes"
-    },
-    {
-      "name": "De Stijl",
-      "prompt": "De Stijl movement, primary colors with black and white, geometric abstraction, straight lines and rectangular forms, Mondrian-inspired grid compositions",
-      "negative_prompt": "curved lines, earth tones, organic shapes, realistic depictions"
-    },
-    {
-      "name": "Futurism",
-      "prompt": "Futurist art, dynamic movement, speed lines, fragmented forms, bold colors, industrial and technological themes, Boccioni-inspired",
-      "negative_prompt": "static compositions, pastoral scenes, muted colors, traditional perspective"
-    },
-    {
-      "name": "Post-Impressionism",
-      "prompt": "Post-Impressionist style, bold colors, expressive brushstrokes, simplified forms, emotional impact, Van Gogh-inspired swirling patterns",
-      "negative_prompt": "photorealistic details, academic style, muted palette, smooth texture"
-    },
-    {
-      "name": "Bauhaus",
-      "prompt": "Bauhaus style, functional design, geometric shapes, primary colors, minimalist aesthetic, typography integration, Kandinsky influence",
-      "negative_prompt": "ornate decoration, complex patterns, realistic illustrations, pastel colors"
-    },
-    {
-      "name": "Precisionism",
-      "prompt": "Precisionist style, sharp outlines, geometric forms, industrial themes, smooth surfaces, muted color palette, Charles Sheeler influence",
-      "negative_prompt": "organic shapes, impressionistic style, bright colors, rural scenes"
-    },
-    {
-      "name": "Symbolism",
-      "prompt": "Symbolist art, mystical and dream-like imagery, allegorical themes, rich and muted colors, emotional resonance, Odilon Redon influence",
-      "negative_prompt": "literal interpretations, bright primary colors, mundane subjects, photorealistic style"
-    },
-    {
-      "name": "Neo-Expressionism",
-      "prompt": "Neo-Expressionist style, intense colors, primitive forms, emotional and raw expression, large-scale works, Basquiat-inspired graffiti elements",
-      "negative_prompt": "subtle tones, refined techniques, photorealistic details, traditional compositions"
-    },
-    {
-      "name": "Suprematism",
-      "prompt": "Suprematist art, geometric shapes, limited color palette, non-objective abstraction, floating forms, Malevich-inspired",
-      "negative_prompt": "representational imagery, complex patterns, earth tones, realistic shading"
-    },
-    {
-      "name": "Mannerism",
-      "prompt": "Mannerist style, elongated figures, unnatural colors, complex poses, spatial ambiguity, El Greco influence",
-      "negative_prompt": "realistic proportions, natural colors, simple compositions, photorealistic style"
-    },
-    {
-      "name": "Color Field Painting",
-      "prompt": "Color Field painting, large areas of flat color, minimal designs, emotive color relationships, abstract expressionist influence, Rothko-inspired",
-      "negative_prompt": "detailed imagery, representational forms, textured brushstrokes, realistic scenes"
-    },
-    {
-      "name": "Tonalism",
-      "prompt": "Tonalist style, muted color palette, soft and hazy atmospheres, landscape focus, emotive and moody scenes, Whistler-inspired",
-      "negative_prompt": "bright colors, sharp contrasts, detailed foregrounds, abstract forms"
-    },
-    {
-      "name": "Photorealism",
-      "prompt": "Photorealistic style, extreme detail, precise rendering, everyday subjects, high contrast, Chuck Close-inspired portrait techniques",
-      "negative_prompt": "abstract forms, visible brushstrokes, impressionistic style, fantastical elements"
-    },
-    {
-      "name": "Analytical Cubism",
-      "prompt": "Analytical Cubism, fragmented geometric forms, monochromatic palette, multiple viewpoints, flattened perspective, early Picasso influence",
-      "negative_prompt": "realistic depictions, vibrant colors, single viewpoint, smooth curves"
-    },
-    {
-      "name": "Synthetism",
-      "prompt": "Synthetist style, flat areas of color, bold outlines, simplified forms, symbolic use of color, Gauguin-inspired",
-      "negative_prompt": "detailed shading, realistic proportions, natural color palette, photorealistic style"
-    },
-    {
-      "name": "Naive Art",
-      "prompt": "Naive art style, childlike simplicity, bright colors, flat perspective, charming imperfections, folk art influence, Rousseau-inspired",
-      "negative_prompt": "academic techniques, realistic proportions, subtle color schemes, complex compositions"
-    },
-    {
-      "name": "Op Art",
-      "prompt": "Op Art style, optical illusions, geometric patterns, black and white contrasts, perception-challenging designs, Bridget Riley influence",
-      "negative_prompt": "representational imagery, pastel colors, organic shapes, realistic scenes"
-    },
-    {
-      "name": "Cloisonnism",
-      "prompt": "Cloisonnist style, bold outlines, flat areas of color, simplified forms, stained glass aesthetic, Emile Bernard influence",
-      "negative_prompt": "subtle gradients, realistic shading, complex patterns, photorealistic details"
-    },
-    {
-      "name": "Hyperrealism",
-      "prompt": "Hyperrealist style, extreme precision and detail, larger-than-life scale, photographic source material, intense focus on texture, Richard Estes influence",
-      "negative_prompt": "abstract elements, visible brushstrokes, stylized forms, impressionistic techniques"
-    },
-    {
-      "name": "Lyrical Abstraction",
-      "prompt": "Lyrical Abstraction, fluid and organic forms, gestural brushstrokes, harmonious colors, emotional and intuitive expression, Helen Frankenthaler influence",
-      "negative_prompt": "geometric shapes, representational imagery, muted colors, rigid compositions"
-    },
-    {
-      "name": "Neo-Romanticism",
-      "prompt": "Neo-Romantic style, emotional landscapes, mystical atmospheres, dramatic lighting, natural world focus, Samuel Palmer influence",
-      "negative_prompt": "urban scenes, harsh realism, geometric abstraction, minimalist design"
-    },
-    {
-      "name": "Metaphysical Painting",
-      "prompt": "Metaphysical art, dreamlike scenes, mannequin-like figures, mysterious juxtapositions, classical architecture elements, De Chirico influence",
-      "negative_prompt": "realistic settings, natural poses, busy compositions, impressionistic style"
-    },
-    {
-      "name": "Vorticism",
-      "prompt": "Vorticist style, angular forms, dynamic compositions, machine-age aesthetic, bold colors, Wyndham Lewis influence",
-      "negative_prompt": "organic shapes, pastel colors, static compositions, naturalistic scenes"
-    },
-    {
-      "name": "Neo-Plasticism",
-      "prompt": "Neo-Plastic style, primary colors with black and white, rectangular forms, asymmetrical balance, Mondrian grid compositions",
-      "negative_prompt": "curved lines, earth tones, representational imagery, complex patterns"
-    },
-    {
-      "name": "New Objectivity",
-      "prompt": "New Objectivity style, harsh realism, social criticism, detailed precision, unsentimental approach, Otto Dix influence",
-      "negative_prompt": "idealized forms, abstract elements, soft focus, romantic themes"
-    },
-    {
-      "name": "Kinetic Art",
-      "prompt": "Kinetic art style, optical illusion of movement, geometric abstraction, interactive elements, bold color contrasts, Alexander Calder mobile influence",
-      "negative_prompt": "static imagery, representational forms, muted colors, traditional painting techniques"
-    },
-    {
-      "name": "Tachisme",
-      "prompt": "Tachisme style, spontaneous brushstrokes, abstract expressionist influence, vibrant color splatters, gestural painting technique, Hans Hartung influence",
-      "negative_prompt": "controlled lines, representational forms, muted colors, precise details"
-    },
-    {
-      "name": "Regionalism",
-      "prompt": "Regionalist style, rural American scenes, realistic rendering, local culture focus, narrative quality, Grant Wood influence",
-      "negative_prompt": "urban settings, abstract forms, international styles, non-representational art"
-    },
-    {
-      "name": "Rayonism",
-      "prompt": "Rayonist style, dynamic light rays, fragmented forms, vibrant color, abstract interpretation of reflected light, Mikhail Larionov influence",
-      "negative_prompt": "realistic lighting, solid forms, muted colors, traditional perspective"
-    },
-    {
-      "name": "Neue Sachlichkeit",
-      "prompt": "Neue Sachlichkeit style, objective realism, social critique, sharp focus, unsentimental portrayal, George Grosz influence",
-      "negative_prompt": "romanticism, abstraction, soft focus, idealized subjects"
-    },
-    {
-      "name": "International Style",
-      "prompt": "International Style, minimalist aesthetic, functional design, geometric forms, absence of ornamentation, Bauhaus influence, architectural precision",
-      "negative_prompt": "decorative elements, organic shapes, historical references, eclectic design"
-    },
-    {
-      "name": "Steampunk",
-      "prompt": "steampunk style, Victorian-era aesthetics, mechanical elements, brass and copper materials, gears and cogs, futuristic retro, industrial feel",
-      "negative_prompt": "modern technology, sleek designs, bright neon colors, minimalistic aesthetics"
-    },
-    {
-      "name": "Cyberpunk",
-      "prompt": "cyberpunk style, neon colors, dystopian urban settings, futuristic technology, dark and gritty, cybernetic enhancements, high-tech low-life aesthetic",
-      "negative_prompt": "bright and cheerful, rural settings, traditional elements, natural landscapes"
-    },
-    {
-      "name": "Fantasy",
-      "prompt": "fantasy art, mythical creatures, enchanted landscapes, magical elements, vibrant colors, epic and whimsical, otherworldly feel",
-      "negative_prompt": "modern settings, realistic details, mundane subjects, abstract forms"
-    },
-    {
-      "name": "Sci-Fi",
-      "prompt": "sci-fi style, futuristic technology, space exploration, advanced civilizations, sleek designs, cosmic elements, high-tech aesthetics",
-      "negative_prompt": "historical settings, rustic elements, natural materials, low-tech"
-    },
-    {
-      "name": "Retro",
-      "prompt": "retro style, vintage colors, nostalgic elements, bold patterns, mid-20th century aesthetics, classic pop culture, old-school feel",
-      "negative_prompt": "modern designs, futuristic elements, sleek lines, contemporary themes"
-    },
-    {
-      "name": "Vaporwave",
-      "prompt": "vaporwave style, neon colors, 80s aesthetics, retro-futuristic, glitch effects, synthwave influence, nostalgic and surreal",
-      "negative_prompt": "realistic details, muted colors, traditional elements, natural forms"
-    },
-    {
-      "name": "Gothic",
-      "prompt": "gothic style, dark and moody, dramatic lighting, ornate details, medieval elements, somber and mysterious, brooding atmosphere",
-      "negative_prompt": "bright and cheerful, minimalistic, sleek and modern, futuristic elements"
-    },
-    {
-      "name": "Graffiti",
-      "prompt": "graffiti style, bold colors, street art influence, urban aesthetics, spray paint textures, vibrant and dynamic, rebellious and edgy",
-      "negative_prompt": "traditional art, muted colors, refined techniques, classic themes"
-    },
-    {
-      "name": "Pin-Up",
-      "prompt": "pin-up style, vintage glamour, playful and seductive, bold colors, 1940s and 1950s aesthetics, retro fashion, classic beauty",
-      "negative_prompt": "modern styles, abstract forms, muted colors, futuristic elements"
-    },
-    {
-      "name": "Tattoo",
-      "prompt": "tattoo style, bold lines, traditional motifs, ink textures, detailed designs, body art influence, classic and contemporary elements",
-      "negative_prompt": "realistic portraits, photorealistic details, muted colors, simple patterns"
-    },
-    {
-      "name": "Chibi",
-      "prompt": "chibi style, exaggerated cute proportions, large heads, small bodies, bright colors, playful and adorable, anime influence",
-      "negative_prompt": "realistic proportions, muted colors, serious expressions, complex backgrounds"
-    },
-    {
-      "name": "Comic Book",
-      "prompt": "comic book style, bold outlines, vibrant colors, action-packed scenes, dynamic poses, exaggerated features, graphic novel influence",
-      "negative_prompt": "realistic details, muted colors, simple compositions, traditional themes"
-    },
-    {
-      "name": "Manga",
-      "prompt": "manga style, black and white, dynamic line work, expressive characters, action-packed, Japanese comic influence, dramatic shading",
-      "negative_prompt": "colorful, realistic proportions, muted expressions, simple designs"
-    },
-    {
-      "name": "Retro Futurism",
-      "prompt": "retro futurism, vintage sci-fi elements, nostalgic futuristic designs, bold colors, mid-20th century aesthetics, space age influence",
-      "negative_prompt": "modern futuristic, sleek designs, realistic details, contemporary themes"
-    },
-    {
-      "name": "Kawaii",
-      "prompt": "kawaii style, cute and adorable, pastel colors, playful elements, exaggerated features, charming and sweet, Japanese pop culture influence",
-      "negative_prompt": "realistic proportions, muted colors, serious themes, complex designs"
-    },
-    {
-      "name": "Doodle",
-      "prompt": "doodle style, whimsical and playful, simple line drawings, spontaneous and freeform, childlike creativity, bright colors",
-      "negative_prompt": "realistic details, refined techniques, muted colors, complex compositions"
-    },
-    {
-      "name": "Whimsical",
-      "prompt": "whimsical style, playful and imaginative, bright colors, fantastical elements, light-hearted and quirky, charming and delightful",
-      "negative_prompt": "serious themes, realistic details, muted colors, complex designs"
-    },
-    {
-      "name": "Pop Surrealism",
-      "prompt": "pop surrealism, dreamlike imagery, vibrant colors, contemporary pop culture, whimsical and bizarre, lowbrow art influence",
-      "negative_prompt": "realistic details, muted colors, traditional themes, serious expressions"
-    },
-    {
-      "name": "Memphis",
-      "prompt": "memphis style, bold geometric shapes, bright colors, playful patterns, 1980s influence, dynamic and eclectic, postmodern design",
-      "negative_prompt": "minimalistic, muted colors, traditional designs, realistic proportions"
-    }
-  ]
+  {
+    "name": "Anime",
+    "prompt": "anime style, vibrant colors, exaggerated expressions, large eyes, dynamic poses, clean lines, character-focused, manga influence",
+    "negative_prompt": "realistic proportions, muted colors, dull expressions, complex backgrounds"
+  },
+  {
+    "name": "Cartoon",
+    "prompt": "cartoon style, bold outlines, bright colors, simplified shapes, exaggerated features, playful and humorous, animation influence",
+    "negative_prompt": "realistic details, muted colors, serious themes, complex designs"
+  },
+  {
+    "name": "Oil Painting",
+    "prompt": "oil painting style, vibrant colors, thick brushstrokes, textured canvas, masterpiece quality, artistic composition, rich details, Impressionist influence",
+    "negative_prompt": "blurry, low quality, distorted, flat colors, digital art, photograph, smooth texture"
+  },
+  {
+    "name": "Watercolor",
+    "prompt": "watercolor painting, soft washes of color, translucent layers, fluid transitions, delicate brushstrokes, organic textures, subtle color bleeding, loose and expressive",
+    "negative_prompt": "sharp edges, opaque colors, digital appearance, heavy lines, photorealistic, high contrast"
+  },
+  {
+    "name": "Pop Art",
+    "prompt": "pop art style, bold primary colors, thick outlines, Ben-Day dots, flat color areas, commercial printing aesthetic, iconic imagery, high contrast, Andy Warhol influence",
+    "negative_prompt": "muted colors, realistic shading, organic shapes, subtle tones, classical art style"
+  },
+  {
+    "name": "Cubism",
+    "prompt": "cubist style, geometric shapes, multiple perspectives, fragmented forms, abstract interpretation, angular lines, muted color palette, Picasso-inspired",
+    "negative_prompt": "realistic proportions, single viewpoint, smooth curves, photorealistic details"
+  },
+  {
+    "name": "Art Nouveau",
+    "prompt": "Art Nouveau style, organic flowing lines, nature-inspired motifs, decorative elements, muted colors, elegant curves, intricate patterns, Mucha-inspired",
+    "negative_prompt": "geometric shapes, harsh lines, bright neon colors, minimalist design, photorealistic"
+  },
+  {
+    "name": "Surrealism",
+    "prompt": "surrealist art, dreamlike imagery, unexpected juxtapositions, symbolic elements, distorted reality, Dali-inspired, subconscious exploration",
+    "negative_prompt": "realistic scenes, logical compositions, mundane subjects, photorealistic style"
+  },
+  {
+    "name": "Japanese Ukiyo-e",
+    "prompt": "Ukiyo-e style, woodblock print aesthetic, flat color areas, strong outlines, traditional Japanese motifs, subtle gradients, Hokusai-inspired",
+    "negative_prompt": "3D shading, photorealistic details, Western art style, bright neon colors"
+  },
+  {
+    "name": "Abstract Expressionism",
+    "prompt": "abstract expressionist style, gestural brushstrokes, spontaneous marks, emotive color use, non-representational forms, large-scale composition, Jackson Pollock influence",
+    "negative_prompt": "realistic depictions, precise lines, photorealistic details, muted colors"
+  },
+  {
+    "name": "Art Deco",
+    "prompt": "Art Deco style, geometric patterns, symmetrical compositions, luxurious materials, streamlined forms, bold colors, glamorous aesthetic, 1920s influence",
+    "negative_prompt": "organic shapes, rustic elements, pastel colors, minimalist design"
+  },
+  {
+    "name": "Gothic",
+    "prompt": "Gothic art style, ornate details, pointed arches, dark and moody atmosphere, religious motifs, stained glass aesthetic, medieval influence",
+    "negative_prompt": "bright cheerful colors, modern elements, minimalist design, photorealistic style"
+  },
+  {
+    "name": "Minimalism",
+    "prompt": "minimalist art style, simple geometric forms, limited color palette, clean lines, negative space, uncluttered composition, Mondrian-inspired",
+    "negative_prompt": "complex patterns, ornate details, busy compositions, realistic depictions"
+  },
+  {
+    "name": "Pointillism",
+    "prompt": "pointillism technique, small distinct dots of color, optical color mixing, vibrant palette, Seurat-inspired, precise dot application, Neo-Impressionist style",
+    "negative_prompt": "smooth color blending, large brushstrokes, monochromatic scheme, photorealistic details"
+  },
+  {
+    "name": "Baroque",
+    "prompt": "Baroque art style, dramatic lighting, rich colors, ornate details, dynamic compositions, emotional intensity, Caravaggio-inspired chiaroscuro",
+    "negative_prompt": "flat lighting, muted colors, minimalist design, static compositions, modern elements"
+  },
+  {
+    "name": "Fauvism",
+    "prompt": "Fauvist style, wild brushstrokes, unrealistic vivid colors, simplified forms, emotional expression through color, Matisse-inspired",
+    "negative_prompt": "realistic colors, detailed rendering, photorealistic style, muted tones"
+  },
+  {
+    "name": "Digital Pixel Art",
+    "prompt": "pixel art style, low-resolution aesthetic, limited color palette, blocky shapes, 8-bit game inspired, crisp edges, retro gaming feel",
+    "negative_prompt": "smooth gradients, high-resolution details, photorealistic rendering, complex shading"
+  },
+  {
+    "name": "Renaissance",
+    "prompt": "Renaissance art style, balanced compositions, realistic proportions, sfumato technique, classical themes, rich colors, Leonardo da Vinci influence",
+    "negative_prompt": "abstract forms, modern elements, flat colors, cartoonish style"
+  },
+  {
+    "name": "Impressionism",
+    "prompt": "Impressionist style, visible brushstrokes, emphasis on light and movement, vibrant color palette, outdoor scenes, Monet-inspired",
+    "negative_prompt": "sharp details, muted colors, indoor settings, photorealistic rendering"
+  },
+  {
+    "name": "Art Brut",
+    "prompt": "Art Brut style, raw and instinctual expression, unconventional materials, bold and crude forms, outsider art aesthetic, Jean Dubuffet influence",
+    "negative_prompt": "refined techniques, traditional art materials, subtle colors, academic style"
+  },
+  {
+    "name": "Constructivism",
+    "prompt": "Constructivist style, geometric abstraction, bold colors, industrial materials, dynamic composition, propaganda poster aesthetic, Russian avant-garde influence",
+    "negative_prompt": "organic shapes, pastel colors, realistic depictions, ornate decorations"
+  },
+  {
+    "name": "Rococo",
+    "prompt": "Rococo style, ornate and elaborate designs, pastel color palette, asymmetrical compositions, playful and light-hearted themes, Fragonard-inspired",
+    "negative_prompt": "minimalist design, dark colors, geometric shapes, heavy or serious themes"
+  },
+  {
+    "name": "De Stijl",
+    "prompt": "De Stijl movement, primary colors with black and white, geometric abstraction, straight lines and rectangular forms, Mondrian-inspired grid compositions",
+    "negative_prompt": "curved lines, earth tones, organic shapes, realistic depictions"
+  },
+  {
+    "name": "Futurism",
+    "prompt": "Futurist art, dynamic movement, speed lines, fragmented forms, bold colors, industrial and technological themes, Boccioni-inspired",
+    "negative_prompt": "static compositions, pastoral scenes, muted colors, traditional perspective"
+  },
+  {
+    "name": "Post-Impressionism",
+    "prompt": "Post-Impressionist style, bold colors, expressive brushstrokes, simplified forms, emotional impact, Van Gogh-inspired swirling patterns",
+    "negative_prompt": "photorealistic details, academic style, muted palette, smooth texture"
+  },
+  {
+    "name": "Bauhaus",
+    "prompt": "Bauhaus style, functional design, geometric shapes, primary colors, minimalist aesthetic, typography integration, Kandinsky influence",
+    "negative_prompt": "ornate decoration, complex patterns, realistic illustrations, pastel colors"
+  },
+  {
+    "name": "Precisionism",
+    "prompt": "Precisionist style, sharp outlines, geometric forms, industrial themes, smooth surfaces, muted color palette, Charles Sheeler influence",
+    "negative_prompt": "organic shapes, impressionistic style, bright colors, rural scenes"
+  },
+  {
+    "name": "Symbolism",
+    "prompt": "Symbolist art, mystical and dream-like imagery, allegorical themes, rich and muted colors, emotional resonance, Odilon Redon influence",
+    "negative_prompt": "literal interpretations, bright primary colors, mundane subjects, photorealistic style"
+  },
+  {
+    "name": "Neo-Expressionism",
+    "prompt": "Neo-Expressionist style, intense colors, primitive forms, emotional and raw expression, large-scale works, Basquiat-inspired graffiti elements",
+    "negative_prompt": "subtle tones, refined techniques, photorealistic details, traditional compositions"
+  },
+  {
+    "name": "Suprematism",
+    "prompt": "Suprematist art, geometric shapes, limited color palette, non-objective abstraction, floating forms, Malevich-inspired",
+    "negative_prompt": "representational imagery, complex patterns, earth tones, realistic shading"
+  },
+  {
+    "name": "Mannerism",
+    "prompt": "Mannerist style, elongated figures, unnatural colors, complex poses, spatial ambiguity, El Greco influence",
+    "negative_prompt": "realistic proportions, natural colors, simple compositions, photorealistic style"
+  },
+  {
+    "name": "Color Field Painting",
+    "prompt": "Color Field painting, large areas of flat color, minimal designs, emotive color relationships, abstract expressionist influence, Rothko-inspired",
+    "negative_prompt": "detailed imagery, representational forms, textured brushstrokes, realistic scenes"
+  },
+  {
+    "name": "Tonalism",
+    "prompt": "Tonalist style, muted color palette, soft and hazy atmospheres, landscape focus, emotive and moody scenes, Whistler-inspired",
+    "negative_prompt": "bright colors, sharp contrasts, detailed foregrounds, abstract forms"
+  },
+  {
+    "name": "Photorealism",
+    "prompt": "Photorealistic style, extreme detail, precise rendering, everyday subjects, high contrast, Chuck Close-inspired portrait techniques",
+    "negative_prompt": "abstract forms, visible brushstrokes, impressionistic style, fantastical elements"
+  },
+  {
+    "name": "Analytical Cubism",
+    "prompt": "Analytical Cubism, fragmented geometric forms, monochromatic palette, multiple viewpoints, flattened perspective, early Picasso influence",
+    "negative_prompt": "realistic depictions, vibrant colors, single viewpoint, smooth curves"
+  },
+  {
+    "name": "Synthetism",
+    "prompt": "Synthetist style, flat areas of color, bold outlines, simplified forms, symbolic use of color, Gauguin-inspired",
+    "negative_prompt": "detailed shading, realistic proportions, natural color palette, photorealistic style"
+  },
+  {
+    "name": "Naive Art",
+    "prompt": "Naive art style, childlike simplicity, bright colors, flat perspective, charming imperfections, folk art influence, Rousseau-inspired",
+    "negative_prompt": "academic techniques, realistic proportions, subtle color schemes, complex compositions"
+  },
+  {
+    "name": "Op Art",
+    "prompt": "Op Art style, optical illusions, geometric patterns, black and white contrasts, perception-challenging designs, Bridget Riley influence",
+    "negative_prompt": "representational imagery, pastel colors, organic shapes, realistic scenes"
+  },
+  {
+    "name": "Cloisonnism",
+    "prompt": "Cloisonnist style, bold outlines, flat areas of color, simplified forms, stained glass aesthetic, Emile Bernard influence",
+    "negative_prompt": "subtle gradients, realistic shading, complex patterns, photorealistic details"
+  },
+  {
+    "name": "Hyperrealism",
+    "prompt": "Hyperrealist style, extreme precision and detail, larger-than-life scale, photographic source material, intense focus on texture, Richard Estes influence",
+    "negative_prompt": "abstract elements, visible brushstrokes, stylized forms, impressionistic techniques"
+  },
+  {
+    "name": "Lyrical Abstraction",
+    "prompt": "Lyrical Abstraction, fluid and organic forms, gestural brushstrokes, harmonious colors, emotional and intuitive expression, Helen Frankenthaler influence",
+    "negative_prompt": "geometric shapes, representational imagery, muted colors, rigid compositions"
+  },
+  {
+    "name": "Neo-Romanticism",
+    "prompt": "Neo-Romantic style, emotional landscapes, mystical atmospheres, dramatic lighting, natural world focus, Samuel Palmer influence",
+    "negative_prompt": "urban scenes, harsh realism, geometric abstraction, minimalist design"
+  },
+  {
+    "name": "Metaphysical Painting",
+    "prompt": "Metaphysical art, dreamlike scenes, mannequin-like figures, mysterious juxtapositions, classical architecture elements, De Chirico influence",
+    "negative_prompt": "realistic settings, natural poses, busy compositions, impressionistic style"
+  },
+  {
+    "name": "Vorticism",
+    "prompt": "Vorticist style, angular forms, dynamic compositions, machine-age aesthetic, bold colors, Wyndham Lewis influence",
+    "negative_prompt": "organic shapes, pastel colors, static compositions, naturalistic scenes"
+  },
+  {
+    "name": "Neo-Plasticism",
+    "prompt": "Neo-Plastic style, primary colors with black and white, rectangular forms, asymmetrical balance, Mondrian grid compositions",
+    "negative_prompt": "curved lines, earth tones, representational imagery, complex patterns"
+  },
+  {
+    "name": "New Objectivity",
+    "prompt": "New Objectivity style, harsh realism, social criticism, detailed precision, unsentimental approach, Otto Dix influence",
+    "negative_prompt": "idealized forms, abstract elements, soft focus, romantic themes"
+  },
+  {
+    "name": "Kinetic Art",
+    "prompt": "Kinetic art style, optical illusion of movement, geometric abstraction, interactive elements, bold color contrasts, Alexander Calder mobile influence",
+    "negative_prompt": "static imagery, representational forms, muted colors, traditional painting techniques"
+  },
+  {
+    "name": "Tachisme",
+    "prompt": "Tachisme style, spontaneous brushstrokes, abstract expressionist influence, vibrant color splatters, gestural painting technique, Hans Hartung influence",
+    "negative_prompt": "controlled lines, representational forms, muted colors, precise details"
+  },
+  {
+    "name": "Regionalism",
+    "prompt": "Regionalist style, rural American scenes, realistic rendering, local culture focus, narrative quality, Grant Wood influence",
+    "negative_prompt": "urban settings, abstract forms, international styles, non-representational art"
+  },
+  {
+    "name": "Rayonism",
+    "prompt": "Rayonist style, dynamic light rays, fragmented forms, vibrant color, abstract interpretation of reflected light, Mikhail Larionov influence",
+    "negative_prompt": "realistic lighting, solid forms, muted colors, traditional perspective"
+  },
+  {
+    "name": "Neue Sachlichkeit",
+    "prompt": "Neue Sachlichkeit style, objective realism, social critique, sharp focus, unsentimental portrayal, George Grosz influence",
+    "negative_prompt": "romanticism, abstraction, soft focus, idealized subjects"
+  },
+  {
+    "name": "International Style",
+    "prompt": "International Style, minimalist aesthetic, functional design, geometric forms, absence of ornamentation, Bauhaus influence, architectural precision",
+    "negative_prompt": "decorative elements, organic shapes, historical references, eclectic design"
+  },
+  {
+    "name": "Steampunk",
+    "prompt": "steampunk style, Victorian-era aesthetics, mechanical elements, brass and copper materials, gears and cogs, futuristic retro, industrial feel",
+    "negative_prompt": "modern technology, sleek designs, bright neon colors, minimalistic aesthetics"
+  },
+  {
+    "name": "Cyberpunk",
+    "prompt": "cyberpunk style, neon colors, dystopian urban settings, futuristic technology, dark and gritty, cybernetic enhancements, high-tech low-life aesthetic",
+    "negative_prompt": "bright and cheerful, rural settings, traditional elements, natural landscapes"
+  },
+  {
+    "name": "Fantasy",
+    "prompt": "fantasy art, mythical creatures, enchanted landscapes, magical elements, vibrant colors, epic and whimsical, otherworldly feel",
+    "negative_prompt": "modern settings, realistic details, mundane subjects, abstract forms"
+  },
+  {
+    "name": "Sci-Fi",
+    "prompt": "sci-fi style, futuristic technology, space exploration, advanced civilizations, sleek designs, cosmic elements, high-tech aesthetics",
+    "negative_prompt": "historical settings, rustic elements, natural materials, low-tech"
+  },
+  {
+    "name": "Retro",
+    "prompt": "retro style, vintage colors, nostalgic elements, bold patterns, mid-20th century aesthetics, classic pop culture, old-school feel",
+    "negative_prompt": "modern designs, futuristic elements, sleek lines, contemporary themes"
+  },
+  {
+    "name": "Vaporwave",
+    "prompt": "vaporwave style, neon colors, 80s aesthetics, retro-futuristic, glitch effects, synthwave influence, nostalgic and surreal",
+    "negative_prompt": "realistic details, muted colors, traditional elements, natural forms"
+  },
+  {
+    "name": "Gothic",
+    "prompt": "gothic style, dark and moody, dramatic lighting, ornate details, medieval elements, somber and mysterious, brooding atmosphere",
+    "negative_prompt": "bright and cheerful, minimalistic, sleek and modern, futuristic elements"
+  },
+  {
+    "name": "Graffiti",
+    "prompt": "graffiti style, bold colors, street art influence, urban aesthetics, spray paint textures, vibrant and dynamic, rebellious and edgy",
+    "negative_prompt": "traditional art, muted colors, refined techniques, classic themes"
+  },
+  {
+    "name": "Pin-Up",
+    "prompt": "pin-up style, vintage glamour, playful and seductive, bold colors, 1940s and 1950s aesthetics, retro fashion, classic beauty",
+    "negative_prompt": "modern styles, abstract forms, muted colors, futuristic elements"
+  },
+  {
+    "name": "Tattoo",
+    "prompt": "tattoo style, bold lines, traditional motifs, ink textures, detailed designs, body art influence, classic and contemporary elements",
+    "negative_prompt": "realistic portraits, photorealistic details, muted colors, simple patterns"
+  },
+  {
+    "name": "Chibi",
+    "prompt": "chibi style, exaggerated cute proportions, large heads, small bodies, bright colors, playful and adorable, anime influence",
+    "negative_prompt": "realistic proportions, muted colors, serious expressions, complex backgrounds"
+  },
+  {
+    "name": "Comic Book",
+    "prompt": "comic book style, bold outlines, vibrant colors, action-packed scenes, dynamic poses, exaggerated features, graphic novel influence",
+    "negative_prompt": "realistic details, muted colors, simple compositions, traditional themes"
+  },
+  {
+    "name": "Manga",
+    "prompt": "manga style, black and white, dynamic line work, expressive characters, action-packed, Japanese comic influence, dramatic shading",
+    "negative_prompt": "colorful, realistic proportions, muted expressions, simple designs"
+  },
+  {
+    "name": "Retro Futurism",
+    "prompt": "retro futurism, vintage sci-fi elements, nostalgic futuristic designs, bold colors, mid-20th century aesthetics, space age influence",
+    "negative_prompt": "modern futuristic, sleek designs, realistic details, contemporary themes"
+  },
+  {
+    "name": "Kawaii",
+    "prompt": "kawaii style, cute and adorable, pastel colors, playful elements, exaggerated features, charming and sweet, Japanese pop culture influence",
+    "negative_prompt": "realistic proportions, muted colors, serious themes, complex designs"
+  },
+  {
+    "name": "Doodle",
+    "prompt": "doodle style, whimsical and playful, simple line drawings, spontaneous and freeform, childlike creativity, bright colors",
+    "negative_prompt": "realistic details, refined techniques, muted colors, complex compositions"
+  },
+  {
+    "name": "Whimsical",
+    "prompt": "whimsical style, playful and imaginative, bright colors, fantastical elements, light-hearted and quirky, charming and delightful",
+    "negative_prompt": "serious themes, realistic details, muted colors, complex designs"
+  },
+  {
+    "name": "Pop Surrealism",
+    "prompt": "pop surrealism, dreamlike imagery, vibrant colors, contemporary pop culture, whimsical and bizarre, lowbrow art influence",
+    "negative_prompt": "realistic details, muted colors, traditional themes, serious expressions"
+  },
+  {
+    "name": "Memphis",
+    "prompt": "memphis style, bold geometric shapes, bright colors, playful patterns, 1980s influence, dynamic and eclectic, postmodern design",
+    "negative_prompt": "minimalistic, muted colors, traditional designs, realistic proportions"
+  }
+]
