@@ -23,14 +23,23 @@ def decode_image(encoded_string: str) -> np.ndarray:
     Decode a base64 string to a numpy array image.
     
     Args:
-        encoded_string (str): The base64 encoded string of the image.
+        encoded_string (str): The base64 encoded string of the image,
+                              or a full data URI.
     
     Returns:
         np.ndarray: The decoded image as a numpy array.
     """
-    decoded = base64.b64decode(encoded_string)
-    img = Image.open(io.BytesIO(decoded))
-    return np.array(img)
+    # Check if the string starts with the data URI prefix
+    if encoded_string.startswith('data:image'):
+        # Split the string and keep only the base64 part
+        encoded_string = encoded_string.split(',', 1)[1]
+    
+    try:
+        decoded = base64.b64decode(encoded_string)
+        img = Image.open(io.BytesIO(decoded))
+        return np.array(img)
+    except Exception as e:
+        raise ValueError(f"Error decoding image: {str(e)}")
 
 def handle_error(e: Exception) -> dict:
     """

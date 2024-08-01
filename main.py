@@ -11,6 +11,7 @@ import os
 import json
 from datetime import datetime
 from typing import List, Dict
+import uuid
 
 from image_generation_loop import generate_images
 from image_enhancement import apply_enhancement
@@ -21,6 +22,7 @@ from config import (
 )
 from model_downloader import download_models, get_model_status
 from utils import encode_image, decode_image, handle_error
+from progress_tracker import progress_tracker
 
 app = Flask(__name__)
 @app.before_request
@@ -52,6 +54,7 @@ def generate_images_endpoint():
         resolution = data.get('resolution', 512)
         temperature = data.get('temperature', DEFAULT_TEMPERATURE)
         inference_steps = data.get('inferenceSteps', 50)
+            
         images = generate_images(prompt, num_images, resolution, temperature, None, inference_steps)
         encoded_images = [f"data:image/png;base64,{encode_image(img)}" for img in images]
         return jsonify({'images': encoded_images})
@@ -79,7 +82,7 @@ def enhance_image_endpoint():
         image = decode_image(image_data)
         enhanced_image = apply_enhancement(image, prompt, enhancement_option, temperature)
         encoded_image = encode_image(enhanced_image)
-        return jsonify({'enhancedImage': encoded_image})
+        return jsonify({'images': [f"data:image/png;base64,{encoded_image}"]})
     except Exception as e:
         logger.error(f"Error during image enhancement: {str(e)}")
         return jsonify(handle_error(e)), 500
@@ -123,13 +126,18 @@ def apply_freestyle_endpoint():
         data = request.json
         image_data = data.get('imageData')
         prompt = data.get('prompt')
-        selected_style = data.get('selectedStyle')
         temperature = data.get('temperature', DEFAULT_TEMPERATURE)
-
-        image = decode_image(image_data)
+        selected_style = data.get('selectedStyle')
+        
+        try:
+            image = decode_image(image_data)
+        except ValueError as ve:
+            logger.error(f"Error decoding image: {str(ve)}")
+            return jsonify({"error": "Invalid image data. Please check the image and try again."}), 400
+        
         enhanced_image = apply_enhancement(image, prompt, "Freestyle", temperature, selected_style)
         encoded_image = encode_image(enhanced_image)
-        return jsonify({'enhancedImage': encoded_image})
+        return jsonify({'enhancedImage': [f"data:image/png;base64,{encoded_image}"]})
     except Exception as e:
         logger.error(f"Error during Freestyle enhancement: {str(e)}")
         return jsonify(handle_error(e)), 500
@@ -140,12 +148,18 @@ def apply_upscaler_endpoint():
         data = request.json
         image_data = data.get('imageData')
         prompt = data.get('prompt')
+        temperature = data.get('temperature', DEFAULT_TEMPERATURE)
         output_size = tuple(data.get('outputSize', (1024, 1024)))
-
-        image = decode_image(image_data)
-        enhanced_image = apply_enhancement(image, prompt, "Upscaler", output_size=output_size)
+        
+        try:
+            image = decode_image(image_data)
+        except ValueError as ve:
+            logger.error(f"Error decoding image: {str(ve)}")
+            return jsonify({"error": "Invalid image data. Please check the image and try again."}), 400
+        
+        enhanced_image = apply_enhancement(image, prompt, "Upscaler", temperature, output_size=output_size)
         encoded_image = encode_image(enhanced_image)
-        return jsonify({'enhancedImage': encoded_image})
+        return jsonify({'enhancedImage': [f"data:image/png;base64,{encoded_image}"]})
     except Exception as e:
         logger.error(f"Error during Upscaler enhancement: {str(e)}")
         return jsonify(handle_error(e)), 500
@@ -156,11 +170,17 @@ def apply_controlnet_endpoint():
         data = request.json
         image_data = data.get('imageData')
         prompt = data.get('prompt')
-
-        image = decode_image(image_data)
-        enhanced_image = apply_enhancement(image, prompt, "ControlNet")
+        temperature = data.get('temperature', DEFAULT_TEMPERATURE)
+        
+        try:
+            image = decode_image(image_data)
+        except ValueError as ve:
+            logger.error(f"Error decoding image: {str(ve)}")
+            return jsonify({"error": "Invalid image data. Please check the image and try again."}), 400
+        
+        enhanced_image = apply_enhancement(image, prompt, "ControlNet", temperature)
         encoded_image = encode_image(enhanced_image)
-        return jsonify({'enhancedImage': encoded_image})
+        return jsonify({'enhancedImage': [f"data:image/png;base64,{encoded_image}"]})
     except Exception as e:
         logger.error(f"Error during ControlNet enhancement: {str(e)}")
         return jsonify(handle_error(e)), 500
@@ -173,10 +193,18 @@ def apply_pixart_endpoint():
         prompt = data.get('prompt')
         temperature = data.get('temperature', DEFAULT_TEMPERATURE)
 
-        image = decode_image(image_data)
+        try:
+            image = decode_image(image_data)
+        except ValueError as ve:
+            logger.error(f"Error decoding image: {str(ve)}")
+            return jsonify({"error": "Invalid image data. Please check the image and try again."}), 400
+        
         enhanced_image = apply_enhancement(image, prompt, "Pixart", temperature)
         encoded_image = encode_image(enhanced_image)
-        return jsonify({'enhancedImage': encoded_image})
+        # Log the response
+        logger.info(f"Applied Pixart enhancement. Output image size: {enhanced_image.shape}")
+        logger.info(f"Encoded image data URI length: {len(encoded_image)}")
+        return jsonify({'enhancedImage': [f"data:image/png;base64,{encoded_image}"]})
     except Exception as e:
         logger.error(f"Error during Pixart enhancement: {str(e)}")
         return jsonify(handle_error(e)), 500
@@ -252,6 +280,8 @@ def get_logs():
         end_date = request.args.get('endDate')
         log_level = request.args.get('logLevel')
 
+        # Implement log fetching logic here
+        # For this example, we'll just read the last 100 lines of the log file
         with open(LOG_FILE, 'r') as f:
             logs = f.readlines()[-100:]
 
@@ -259,6 +289,11 @@ def get_logs():
     except Exception as e:
         logger.error(f"Error fetching logs: {str(e)}")
         return jsonify(handle_error(e)), 500
+    
+@app.route('/progress/<task_id>', methods=['GET'])
+def get_progress(task_id):
+    progress = progress_tracker.get_progress(task_id)
+    return jsonify({'progress': progress})
     
 @app.route('/test', methods=['GET'])
 def test_endpoint():

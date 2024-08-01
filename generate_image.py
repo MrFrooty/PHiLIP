@@ -6,7 +6,7 @@ from diffusers import PixArtAlphaPipeline
 from torchvision import transforms
 from PIL import Image
 import logging
-from typing import List, Optional, Union
+from typing import List, Optional, Union, Callable
 from tqdm import tqdm
 from config import MODEL_MID_RES, MODEL_HIGH_RES, LOG_FORMAT, LOG_DATE_FORMAT
 
@@ -87,8 +87,7 @@ def generate_with_pipeline(pipe, prompt, num_images, resolution, temp, input_ima
         width=resolution,
         guidance_scale=temp,
         image=input_images,
-        num_inference_steps=steps,
-        callback=lambda i, t, x: tqdm.write(f"Step {i}/{steps}", end="\r")
+        num_inference_steps=steps
     )
 
 def process_base_images(base_images: Union[List[np.ndarray], np.ndarray], device: torch.device) -> torch.Tensor:

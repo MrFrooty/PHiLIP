@@ -3,7 +3,7 @@
 import logging
 import numpy as np
 from PIL import Image
-from typing import Optional, Tuple, Dict, List
+from typing import Optional, Tuple, Dict, List, Callable
 import torch
 from diffusers import StableDiffusionLatentUpscalePipeline, StableDiffusionControlNetPipeline, ControlNetModel, DiffusionPipeline
 import cv2
@@ -25,7 +25,7 @@ def apply_enhancement(
     temperature: float = 1.0,
     selected_style: Optional[str] = None,
     output_size: Optional[Tuple[int, int]] = None
-) -> np.ndarray:
+) -> List[np.ndarray]:
     enhancement_functions = {
         "Freestyle": apply_freestyle,
         "Upscaler": apply_upscaler,
@@ -73,7 +73,7 @@ def apply_freestyle(
             negative_prompt=neg_prompt,
             num_inference_steps=20,
             guidance_scale=temperature,
-            num_images_per_prompt=1,
+            num_images_per_prompt=1
         ).images[0]
     
     return np.array(result)
@@ -94,7 +94,7 @@ def apply_upscaler(
             prompt=prompt,
             image=input_image,
             num_inference_steps=20,
-            guidance_scale=temperature,
+            guidance_scale=temperature
         ).images[0]
     
     upscaled_image = upscaled_image.resize(output_size, Image.LANCZOS)
@@ -104,8 +104,7 @@ def apply_controlnet(
     image: np.ndarray,
     prompt: str,
     temperature: float,
-    selected_style: Optional[str] = None,
-    output_size: Optional[Tuple[int, int]] = None
+    selected_style: Optional[str] = None
 ) -> np.ndarray:
     controlnet = ControlNetModel.from_pretrained(CONTROLNET_MODEL, torch_dtype=dtype)
     pipe = StableDiffusionControlNetPipeline.from_pretrained(
@@ -124,7 +123,7 @@ def apply_controlnet(
             controlnet_conditioning_scale=CONTROLNET_CONDITIONING_SCALE,
             control_guidance_start=CONTROL_GUIDANCE_START,
             control_guidance_end=CONTROL_GUIDANCE_END,
-            guidance_scale=temperature,
+            guidance_scale=temperature
         ).images[0]
     
     return np.array(output)
@@ -147,7 +146,7 @@ def apply_pixart(
             image=input_image,
             num_inference_steps=20,
             guidance_scale=temperature,
-            num_images_per_prompt=1,
+            num_images_per_prompt=1
         ).images[0]
     
     return np.array(result)
